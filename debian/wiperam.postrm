@@ -1,5 +1,4 @@
 #!/bin/sh
-#restore default configurations
 
 set -e
 
