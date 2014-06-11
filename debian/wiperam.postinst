@@ -7,22 +7,6 @@ set -e
 
 sed -i 's/6/0 6/' /etc/init.d/kexec-load
 
-#configure memlockd
-
-cat >/etc/memlockd.cfg <<EOL
-+/bin/cat
-+/bin/chvt
-+/bin/sh
-+/bin/sleep
-+/bin/stty
-/etc/default/locale
-/etc/init.d/kexec-load
-/etc/init.d/tails-kexec
-+/sbin/kexec
-+/usr/bin/eject
-+/usr/bin/pkill
-EOL
-
 #configure init scripts
 
 CUSTOM_INITSCRIPTS="
@@ -45,10 +29,8 @@ insserv -r $PATCHED_INITSCRIPTS
 # Re-install overriden initscripts and install our custom ones.
 insserv $PATCHED_INITSCRIPTS $CUSTOM_INITSCRIPTS
 
-#divert custom memlockd.cfg
-
-dpkg-divert --add --package wiperam --rename --divert /etc/memlockd.cfg.fake /etc/memlockd.cfg
-
 #divert custom kexec-load
 
 dpkg-divert --add --rename --package wiperam --divert /etc/init.d/kexec-load.fake /etc/init.d/kexec-load
+
+#DEBHELPER#
