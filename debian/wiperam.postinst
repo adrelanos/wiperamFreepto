@@ -2,27 +2,6 @@
 
 set -e
 
-#configure init scripts
-
-CUSTOM_INITSCRIPTS="
-tails-kexec
-tails-reconfigure-kexec
-tails-reconfigure-memlockd
-"
-
-PATCHED_INITSCRIPTS="
-kexec
-memlockd
-"
-
-# The patches to adjust the runlevels are applied to the chroot
-# after the packages have been installed. So we need to remove them first,
-# to re-install them with our settings.
-insserv -r $PATCHED_INITSCRIPTS
-
-# Re-install overriden initscripts and install our custom ones.
-insserv $PATCHED_INITSCRIPTS $CUSTOM_INITSCRIPTS
-
 if [ -x "/etc/init.d/kexec-load" ]; then
    update-rc.d kexec-load defaults
 fi
