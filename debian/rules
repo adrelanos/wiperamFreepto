@@ -8,6 +8,9 @@
 %:
 	dh $@ --with=config-package
 
+override_dh_install:
+	dh_installinit --onlyscripts
+
 clean:
 	make clean
 
