@@ -9,7 +9,12 @@
 	dh $@ --with=config-package
 
 override_dh_install:
-	dh_installinit --onlyscripts
+	cp --preserve "etc/init.d/tails-kexec" "debian/wiperam.tails-kexec.init"
+	cp --preserve "etc/init.d/tails-kexec" "debian/wiperam.tails-reconfigure-kexec.init"
+	cp --preserve "etc/init.d/tails-kexec" "debian/wiperam.tails-reconfigure-memlockd.init"
+	dh_installinit --onlyscripts --package "wiperam" --name="tails-kexec"
+	dh_installinit --onlyscripts --package "wiperam" --name="tails-reconfigure-kexec"
+	dh_installinit --onlyscripts --package "wiperam" --name="tails-reconfigure-memlockd"
 
 clean:
 	make clean
