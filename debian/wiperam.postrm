@@ -2,6 +2,8 @@
 
 set -e
 
-update-rc.d kexec-load defaults || true
+if [ -x "/etc/init.d/kexec-load" ]; then
+   update-rc.d kexec-load defaults || true
+fi
 
 #DEBHELPER#
