@@ -1,0 +1,24 @@
+## Copyright (C) 2012 - 2014 Patrick Schleizer <adrelanos@riseup.net>
+## See the file COPYING for copying conditions.
+
+Source: wiperam
+Section: misc
+Priority: optional
+## TODO: Maintainer field
+#Maintainer: ono-sendai
+Maintainer: Patrick Schleizer <adrelanos@riseup.net>
+Build-Depends: debhelper (>= 8), faketime, git, config-package-dev (>= 5.1)
+Homepage: https://tails.boum.org/contribute/design/memory_erasure/
+Vcs-Browser: https://github.com/AvANa-BBS/wiperamFreepto
+Vcs-Git: https://github.com/AvANa-BBS/wiperamFreepto.git
+Standards-Version: 3.9.4
+
+Package: wiperam
+Architecture: all
+Depends: secure-delete, kexec-tools, memlockd, ${misc:Depends}
+Provides: ${diverted-files}
+Conflicts: ${diverted-files}
+Description: protection from memory recovery
+ In order to protect against memory recovery such as cold boot attack, the
+ system RAM is overwritten when the system is being shutdown or when the boot
+ medium is physically removed.
