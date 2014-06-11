@@ -1,7 +1,7 @@
 #! /bin/sh
 ### BEGIN INIT INFO
 # Provides:		tails-kexec
-# Required-Start:	
+# Required-Start:
 # Required-Stop:	halt reboot
 # X-Stop-After:		umountroot live-boot
 # Default-Start:
@@ -40,8 +40,10 @@ do_stop () {
    print_empty_line
    print_text "--------------------------------------------------------------------------------"
 
-   # $LANG was set there by the FIXME live-config upstream script
-   . /etc/default/locale
+   if [ -f /etc/default/locale ]; then
+      # $LANG was set there by the FIXME live-config upstream script
+      . /etc/default/locale
+   fi
 
    # Note to translators: any text line must fit on a 80 characters wide screen
    case "${LANG}" in
