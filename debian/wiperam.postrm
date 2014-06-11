@@ -3,8 +3,4 @@
 
 set -e
 
-sed -i 's/0 6/6/' /etc/init.d/kexec-load
-
-dpkg-divert --remove /etc/init.d/kexec-load
-
 #DEBHELPER#
