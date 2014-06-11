@@ -2,9 +2,9 @@
 ### BEGIN INIT INFO
 # Provides:		tails-reconfigure-memlockd
 # Required-Start:	$local_fs
-# Required-Stop:	
+# Required-Stop:
 # Default-Start:        2 3 4 5
-# Default-Stop:		
+# Default-Stop:
 # X-Start-Before:       memlockd
 # Short-Description:    Reconfigure memlockd depending on running kernel
 # Description:          Reconfigure memlockd depending on running kernel
@@ -26,6 +26,10 @@ case "$1" in
 	mkdir -p /lib/init/rw/sendsigs.omit.d
 	rm -f /lib/init/rw/sendsigs.omit.d/memlockd
 	ln -s /var/run/memlockd.pid /lib/init/rw/sendsigs.omit.d/memlockd
+	;;
+  stop|restart|reload|force-reload)
+	echo "Error: argument '$1' not supported" >&2
+	exit 3
 	;;
   *)
 	echo "Usage: $0 start" >&2

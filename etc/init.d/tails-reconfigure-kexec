@@ -2,9 +2,9 @@
 ### BEGIN INIT INFO
 # Provides:		tails-reconfigure-kexec
 # Required-Start:	$local_fs
-# Required-Stop:	
+# Required-Stop:
 # Default-Start:        2 3 4 5
-# Default-Stop:		
+# Default-Stop:
 # Short-Description:    Reconfigure kexec depending on running kernel
 # Description:          Reconfigure kexec depending on running kernel
 ### END INIT INFO
@@ -23,6 +23,10 @@ case "$1" in
 	else
 	   echo 'APPEND="${APPEND} quiet"'        >> "$KEXEC_CONF"
 	fi
+	;;
+  stop|restart|reload|force-reload)
+	echo "Error: argument '$1' not supported" >&2
+	exit 3
 	;;
   *)
 	echo "Usage: $0 start" >&2
