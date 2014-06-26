@@ -1,9 +1,8 @@
 Source: wiperam
 Section: misc
 Priority: optional
-## TODO: Maintainer field
-#Maintainer: ono-sendai
-Maintainer: Patrick Schleizer <adrelanos@riseup.net>
+#Maintainer: XXX: insert maintenance team's mailing-list
+Uploaders: Patrick Schleizer <adrelanos@riseup.net>, intrigeri <intrigeri@debian.org>, ono-sendai <ono-sendai@insiberia.net>
 Build-Depends: debhelper (>= 8), faketime, git, config-package-dev (>= 5.1)
 Homepage: XXX:replace with new homepage
 Vcs-Browser: XXX: replace with new repo https://github.com/AvANa-BBS/wiperamFreepto
