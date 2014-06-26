@@ -1,0 +1,10 @@
+### BEGIN INIT INFO
+# Provides:		kexec
+# Required-Start:	
+# Required-Stop:   	reboot
+# X-Stop-After:		umountroot
+# Default-Start:
+# Default-Stop:		
+# Short-Description: Execute the kexec -e command to reboot system
+# Description:
+### END INIT INFO
