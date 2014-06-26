@@ -11,11 +11,11 @@
 ### END INIT INFO
 
 PATH="/usr/local/bin:${PATH}"
-MEMLOCKD_CONF=/etc/memlockd.cfg
+MEMLOCKD_CONF=/etc/memlockd.d/wiperam-runtime.cfg
 
 case "$1" in
   start)
-	tails-get-bootinfo kernel >> "$MEMLOCKD_CONF"
+	tails-get-bootinfo kernel >  "$MEMLOCKD_CONF"
 	tails-get-bootinfo initrd >> "$MEMLOCKD_CONF"
 
 	# Tell sendsigs to forget about memlockd. Together with
