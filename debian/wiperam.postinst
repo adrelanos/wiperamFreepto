@@ -19,10 +19,10 @@ case "$1" in
 	;;
 esac
 
+#DEBHELPER#
+
 if which invoke-rc.d >/dev/null 2>&1; then
 	invoke-rc.d memlockd reload
 else
 	/etc/init.d/memlockd reload
 fi
-
-#DEBHELPER#
