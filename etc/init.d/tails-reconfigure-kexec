@@ -9,6 +9,8 @@
 # Description:          Reconfigure kexec depending on running kernel
 ### END INIT INFO
 
+. /lib/lsb/init-functions
+
 PATH="/usr/local/bin:${PATH}"
 KEXEC_CONF=/etc/default/kexec.d/wiperam
 

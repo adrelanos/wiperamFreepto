@@ -21,6 +21,8 @@
 # the appropriate strings. Unfortunately po4a does not support shell
 # scripts.
 
+. /lib/lsb/init-functions
+
 PATH=/sbin:/bin
 
 print_text () {

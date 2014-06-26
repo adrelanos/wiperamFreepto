@@ -10,6 +10,8 @@
 # Description:          Reconfigure memlockd depending on running kernel
 ### END INIT INFO
 
+. /lib/lsb/init-functions
+
 PATH="/usr/local/bin:${PATH}"
 MEMLOCKD_CONF=/etc/memlockd.d/wiperam-runtime.cfg
 
