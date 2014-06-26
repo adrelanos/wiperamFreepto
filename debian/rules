@@ -9,14 +9,14 @@ DESTDIR = $(CURDIR)/debian/$(PACKAGE)
 	dh $@
 
 override_dh_install:
-	cp --preserve "etc/init.d/tails-kexec" "debian/wiperam.tails-kexec.init"
-	cp --preserve "etc/init.d/tails-kexec" "debian/wiperam.tails-reconfigure-kexec.init"
-	cp --preserve "etc/init.d/tails-kexec" "debian/wiperam.tails-reconfigure-memlockd.init"
+	cp --preserve "etc/init.d/wiperam-kexec" "debian/wiperam.wiperam-kexec.init"
+	cp --preserve "etc/init.d/wiperam-reconfigure-kexec" "debian/wiperam.wiperam-reconfigure-kexec.init"
+	cp --preserve "etc/init.d/wiperam-reconfigure-memlockd" "debian/wiperam.wiperam-reconfigure-memlockd.init"
 
 override_dh_installinit:
-	dh_installinit --onlyscripts --package "wiperam" --name="tails-kexec"
-	dh_installinit --onlyscripts --package "wiperam" --name="tails-reconfigure-kexec"
-	dh_installinit --onlyscripts --package "wiperam" --name="tails-reconfigure-memlockd"
+	dh_installinit --onlyscripts --package "wiperam" --name="wiperam-kexec"
+	dh_installinit --onlyscripts --package "wiperam" --name="wiperam-reconfigure-kexec"
+	dh_installinit --onlyscripts --package "wiperam" --name="wiperam-reconfigure-memlockd"
 
 override_dh_autoclean:
 	dh_autoclean

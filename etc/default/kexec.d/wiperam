@@ -5,7 +5,7 @@
 LOAD_KEXEC=true
 
 # Kernel and initrd image
-# Unused: tails-reconfigure-kexec appends the correct values to this file
+# Unused: wiperam-reconfigure-kexec appends the correct values to this file
 #         at boot time.
 KERNEL_IMAGE="/vmlinuz"
 INITRD="/initrd.img"

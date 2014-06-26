@@ -1,6 +1,6 @@
 #! /bin/sh
 ### BEGIN INIT INFO
-# Provides:		tails-reconfigure-memlockd
+# Provides:		wiperam-reconfigure-memlockd
 # Required-Start:	$local_fs $remote_fs
 # Required-Stop:
 # Default-Start:        2 3 4 5
