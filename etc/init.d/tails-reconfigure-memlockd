@@ -15,6 +15,9 @@ MEMLOCKD_CONF=/etc/memlockd.d/wiperam-runtime.cfg
 
 case "$1" in
   start)
+	# We're running *before* memlockd is started,
+	# so we do not need to have it reload its configuration.
+
 	tails-get-bootinfo kernel >  "$MEMLOCKD_CONF"
 	tails-get-bootinfo initrd >> "$MEMLOCKD_CONF"
 
