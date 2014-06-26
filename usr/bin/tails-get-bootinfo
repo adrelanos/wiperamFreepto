@@ -1,7 +1,15 @@
 #!/bin/sh
 set -x
 
-LIVE_IMAGE_MOUNTPOINT=/lib/live/mount/medium
+boot_files_directory () {
+   LIVE_IMAGE_MOUNTPOINT=/lib/live/mount/medium
+   if [ -d "$LIVE_IMAGE_MOUNTPOINT" ]; then
+      echo "$LIVE_IMAGE_MOUNTPOINT"
+   else
+      echo '/boot'
+   fi
+}
+
 for arg in $(cat /proc/cmdline) ; do
    case "$arg" in
       BOOT_IMAGE=*)
@@ -13,16 +21,21 @@ for arg in $(cat /proc/cmdline) ; do
    esac
 done
 
+# GRUB2 does not pass initrd= on the kernel command-line.
+if [ -z "$initrd" ]; then
+   initrd=$(echo -n "$kernel" | sed -r -e 's,^vmlinuz,initrd.img,')
+fi
+
 # Sanity checks
 [ -n "$kernel" ] || exit 4
 [ -n "$initrd" ] || exit 5
 
 case "$1" in
    kernel)
-      echo "${LIVE_IMAGE_MOUNTPOINT}${kernel}"
+      echo "$(boot_files_directory)${kernel}"
       ;;
    initrd)
-      echo "${LIVE_IMAGE_MOUNTPOINT}${initrd}"
+      echo "$(boot_files_directory)${initrd}"
       ;;
    *)
       echo "Usage: $0 kernel|initrd" >&2
