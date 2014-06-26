@@ -34,6 +34,9 @@ case "$1" in
 	rm -f "$MEMLOCKD_CONF"
 	invoke-rc.d memlockd reload
 	;;
+  status)
+	test -f "$MEMLOCKD_CONF"
+	;;
   *)
 	echo "Usage: $0 start" >&2
 	exit 3
