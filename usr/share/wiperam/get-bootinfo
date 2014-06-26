@@ -6,7 +6,7 @@ boot_files_directory () {
    if [ -d "$LIVE_IMAGE_MOUNTPOINT" ]; then
       echo "$LIVE_IMAGE_MOUNTPOINT"
    else
-      echo '/boot'
+      echo ''
    fi
 }
 
