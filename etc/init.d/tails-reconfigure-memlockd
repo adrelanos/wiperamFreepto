@@ -29,8 +29,8 @@ case "$1" in
 	ln -s /var/run/memlockd.pid /lib/init/rw/sendsigs.omit.d/memlockd
 	;;
   stop|restart|reload|force-reload)
-	echo "Error: argument '$1' not supported" >&2
-	exit 3
+	rm -f "$MEMLOCKD_CONF"
+	invoke-rc.d memlockd reload
 	;;
   *)
 	echo "Usage: $0 start" >&2
