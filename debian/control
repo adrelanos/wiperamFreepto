@@ -1,7 +1,7 @@
 Source: wiperam
 Section: misc
 Priority: optional
-#Maintainer: XXX: insert maintenance team's mailing-list
+Maintainer: wiperam maintainers <wiperam@lists.riseup.net>
 Uploaders: Patrick Schleizer <adrelanos@riseup.net>, intrigeri <intrigeri@debian.org>, ono-sendai <ono-sendai@insiberia.net>
 Build-Depends: debhelper (>= 8), faketime, config-package-dev (>= 5.1), initramfs-tools
 Homepage: XXX:replace with new homepage
