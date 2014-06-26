@@ -11,4 +11,12 @@ else
 	fi
 fi
 
+case "$1" in
+	configure)
+		if [ -x /usr/sbin/update-initramfs ]; then
+			update-initramfs -u
+		fi
+	;;
+esac
+
 #DEBHELPER#
