@@ -10,13 +10,13 @@
 ### END INIT INFO
 
 PATH="/usr/local/bin:${PATH}"
-KEXEC_CONF=/etc/default/kexec
+KEXEC_CONF=/etc/default/kexec.d/wiperam
 
 case "$1" in
   start)
 	KERNEL_IMAGE=$(tails-get-bootinfo kernel)
 	INITRD=$(tails-get-bootinfo initrd)
-	echo "KERNEL_IMAGE=\"${KERNEL_IMAGE}\""   >> "$KEXEC_CONF"
+	echo "KERNEL_IMAGE=\"${KERNEL_IMAGE}\""   >  "$KEXEC_CONF"
 	echo "INITRD=\"${INITRD}\""               >> "$KEXEC_CONF"
 	if grep -qw debug=wipemem /proc/cmdline; then
 	   echo 'APPEND="${APPEND} sdmemdebug=1"' >> "$KEXEC_CONF"
