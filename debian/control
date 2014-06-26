@@ -4,9 +4,9 @@ Priority: optional
 Maintainer: wiperam maintainers <wiperam@lists.riseup.net>
 Uploaders: Patrick Schleizer <adrelanos@riseup.net>, intrigeri <intrigeri@debian.org>, ono-sendai <ono-sendai@insiberia.net>
 Build-Depends: debhelper (>= 8), faketime, config-package-dev (>= 5.1), initramfs-tools
-Homepage: XXX:replace with new homepage
-Vcs-Browser: XXX: replace with new repo https://github.com/AvANa-BBS/wiperamFreepto
-Vcs-Git: XXX: replace with new repo https://github.com/AvANa-BBS/wiperamFreepto.git
+Homepage: https://tails.boum.org/contribute/design/memory_erasure/
+Vcs-Browser: https://git-tails.immerda.ch/wiperam/
+Vcs-Git: git://git.immerda.ch/tails/wiperam.git
 Standards-Version: 3.9.5
 
 Package: wiperam
