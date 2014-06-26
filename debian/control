@@ -7,7 +7,7 @@ Build-Depends: debhelper (>= 8), faketime, config-package-dev (>= 5.1), initramf
 Homepage: XXX:replace with new homepage
 Vcs-Browser: XXX: replace with new repo https://github.com/AvANa-BBS/wiperamFreepto
 Vcs-Git: XXX: replace with new repo https://github.com/AvANa-BBS/wiperamFreepto.git
-Standards-Version: 3.9.4
+Standards-Version: 3.9.5
 
 Package: wiperam
 Architecture: all
