@@ -24,9 +24,12 @@ case "$1" in
 	   echo 'APPEND="${APPEND} quiet"'        >> "$KEXEC_CONF"
 	fi
 	;;
-  stop|restart|reload|force-reload)
+  restart|reload|force-reload)
 	echo "Error: argument '$1' not supported" >&2
 	exit 3
+	;;
+  stop)
+	rm -f "$KEXEC_CONF"
 	;;
   *)
 	echo "Usage: $0 start" >&2
