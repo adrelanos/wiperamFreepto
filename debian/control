@@ -12,8 +12,6 @@ Standards-Version: 3.9.5
 Package: wiperam
 Architecture: all
 Depends: secure-delete, kexec-tools, memlockd, ${misc:Depends}
-Provides: ${diverted-files}
-Conflicts: ${diverted-files}
 Description: protection from memory recovery
  In order to protect against memory recovery such as cold boot attack, the
  system RAM is overwritten when the system is being shutdown or when the boot
