@@ -1,5 +1,5 @@
 ## Copyright (C) 2012 - 2014 Patrick Schleizer <adrelanos@riseup.net>
 ## See the file COPYING for copying conditions.
 
-/etc/default/kexec.anondist
-/etc/memlockd.cfg.anondist
+/etc/default/kexec.wiperam
+/etc/memlockd.cfg.wiperam
