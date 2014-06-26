@@ -1,0 +1,5 @@
+# The "status" option does not make any sense for a service that's started
+# at shutdown/reboot time only.
+wiperam binary: init.d-script-does-not-implement-optional-option etc/init.d/tails-kexec status
+# We don't want to trigger a kexec operation when switching to runlevel 1.
+wiperam binary: init.d-script-possible-missing-stop etc/init.d/tails-kexec 1
