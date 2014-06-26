@@ -19,16 +19,8 @@ case "$1" in
   start)
 	# We're running *before* memlockd is started,
 	# so we do not need to have it reload its configuration.
-
 	/usr/share/wiperam/get-bootinfo kernel >  "$MEMLOCKD_CONF"
 	/usr/share/wiperam/get-bootinfo initrd >> "$MEMLOCKD_CONF"
-
-	# Tell sendsigs to forget about memlockd. Together with
-	# not calling 'memlockd stop' on shutdown, we have a
-	# strong chance that what tails-kexec needs will be available.
-	mkdir -p /lib/init/rw/sendsigs.omit.d
-	rm -f /lib/init/rw/sendsigs.omit.d/memlockd
-	ln -s /var/run/memlockd.pid /lib/init/rw/sendsigs.omit.d/memlockd
 	;;
   stop|restart|reload|force-reload)
 	rm -f "$MEMLOCKD_CONF"
