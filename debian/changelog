@@ -1,5 +1,5 @@
-wiperam (0.1) UNRELEASED; urgency=low
+wiperam (0.1) unstable; urgency=low
 
   * Initial release.
 
- -- Patrick Schleizer <adrelanos@riseup.net>  Sun, 09 Mar 2014 14:47:45 +0000
+ -- intrigeri <intrigeri@debian.org>  Thu, 26 Jun 2014 19:08:08 +0200
