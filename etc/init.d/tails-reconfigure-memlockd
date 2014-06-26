@@ -15,10 +15,8 @@ MEMLOCKD_CONF=/etc/memlockd.cfg
 
 case "$1" in
   start)
-	tails-boot-to-kexec kernel $(tails-get-bootinfo kernel) \
-		>> "$MEMLOCKD_CONF"
-	tails-boot-to-kexec initrd $(tails-get-bootinfo initrd) \
-		>> "$MEMLOCKD_CONF"
+	tails-get-bootinfo kernel >> "$MEMLOCKD_CONF"
+	tails-get-bootinfo initrd >> "$MEMLOCKD_CONF"
 
 	# Tell sendsigs to forget about memlockd. Together with
 	# not calling 'memlockd stop' on shutdown, we have a
