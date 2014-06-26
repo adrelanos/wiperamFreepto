@@ -1,3 +1,5 @@
+***Note: this document is outdated.***
+
 Prima di tutto viene eseguito lo script di preinst che si occupa di fare un
 dpkg-divert di /etc/memlockd.cfg in /etc/memlockd.cfg.fake e di
 /etc/init.d/kexec-load in /etc/init.d/kexec-load.fake, per
