@@ -2,6 +2,9 @@
 
 #export DH_VERBOSE=1
 
+PACKAGE = wiperam
+DESTDIR = $(CURDIR)/debian/$(PACKAGE)
+
 %:
 	dh $@ --with=config-package
 
@@ -15,7 +18,10 @@ override_dh_installinit:
 	dh_installinit --onlyscripts --package "wiperam" --name="tails-reconfigure-kexec"
 	dh_installinit --onlyscripts --package "wiperam" --name="tails-reconfigure-memlockd"
 
-clean:
-	make clean
+override_dh_autoclean:
+	dh_autoclean
+	rm -f debian/*.init
+	rm -rf "$(DESTDIR)/etc"
+	rm -rf "$(DESTDIR)/usr"
 
 .PHONY: clean build
