@@ -16,8 +16,8 @@ KEXEC_CONF=/etc/default/kexec.d/wiperam
 
 case "$1" in
   start)
-	KERNEL_IMAGE=$(tails-get-bootinfo kernel)
-	INITRD=$(tails-get-bootinfo initrd)
+	KERNEL_IMAGE=$(/usr/share/wiperam/get-bootinfo kernel)
+	INITRD=$(/usr/share/wiperam/get-bootinfo initrd)
 	echo "KERNEL_IMAGE=\"${KERNEL_IMAGE}\""   >  "$KEXEC_CONF"
 	echo "INITRD=\"${INITRD}\""               >> "$KEXEC_CONF"
 	if grep -qw debug=wipemem /proc/cmdline; then
