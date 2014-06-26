@@ -64,8 +64,8 @@ shopt -u globstar
 rm --force "../${package_name}_${version}.orig.tar.gz"
 
 git archive \
-   --format=tar HEAD \
-   | gzip -n > "../${package_name}_${version}.orig.tar.gz"
+   --format=tar --prefix="wiperam-$version/" HEAD \
+   | xz > "../${package_name}_${version}.orig.tar.xz"
 
 ls -la "../${package_name}_${version}.orig.tar.gz"
 
