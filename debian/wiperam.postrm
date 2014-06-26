@@ -2,8 +2,13 @@
 
 set -e
 
-if [ -x "/etc/init.d/kexec-load" ]; then
-   update-rc.d kexec-load defaults || true
+if ! dpkg -s insserv >/dev/null 2>&1 || [ -f /etc/init.d/.legacy-bootordering ]; then
+	echo "Dependency based boot sequencing is not configured. Skipping insserv bits." >&2
+else
+	if [ -x "/etc/init.d/kexec-load" ]; then
+		# Take into account the insserv override file we've installed
+		insserv /etc/init.d/kexec-load
+	fi
 fi
 
 #DEBHELPER#
