@@ -23,7 +23,7 @@ done
 
 # GRUB2 does not pass initrd= on the kernel command-line.
 if [ -z "$initrd" ]; then
-   initrd=$(echo -n "$kernel" | sed -r -e 's,^vmlinuz,initrd.img,')
+   initrd=$(echo -n "$kernel" | sed -r -e 's,vmlinuz,initrd.img,')
 fi
 
 # Sanity checks
