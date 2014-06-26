@@ -12,7 +12,7 @@
 . /lib/lsb/init-functions
 
 PATH="/usr/local/bin:${PATH}"
-KEXEC_CONF=/etc/default/kexec.d/wiperam
+KEXEC_CONF=/etc/default/kexec.d/wiperam-runtime
 
 case "$1" in
   start)

@@ -6,7 +6,7 @@ PACKAGE = wiperam
 DESTDIR = $(CURDIR)/debian/$(PACKAGE)
 
 %:
-	dh $@ --with=config-package
+	dh $@
 
 override_dh_install:
 	cp --preserve "etc/init.d/tails-kexec" "debian/wiperam.tails-kexec.init"
