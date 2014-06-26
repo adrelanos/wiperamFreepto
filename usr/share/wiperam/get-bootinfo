@@ -1,5 +1,4 @@
 #!/bin/sh
-set -x
 
 boot_files_directory () {
    LIVE_IMAGE_MOUNTPOINT=/lib/live/mount/medium
